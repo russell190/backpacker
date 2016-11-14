@@ -1,0 +1,82 @@
+html {
+    height: 100vh;
+    background-color: white;
+}
+
+#logo {
+    padding-left: 50px;
+    color: white;
+}
+
+#logo:hover {
+    color: darkgrey;
+}
+
+.login, .go {
+    padding-right: 50px;
+}
+
+body {
+    background-color: whitesmoke;
+    font-weight: bold;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.jumbotron {
+    margin-top: -20px;
+    height: 90vh;
+    background-image: url(img/mountain-1462655.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.jumbotron p {
+    text-align: center;
+}
+
+.contactsection1 {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.copyright {
+    position: absolute;
+    color: whitesmoke;
+    bottom: 0;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    
+}
+
+body {
+    background-color: #2c2c2c;
+}
+
+@media (min-width: 1200px) {
+    .jumbotron {
+        height: 96vh;
+    }
+}
+
+@media (max-width: 768px) {
+    #logo {
+        padding-left: 20px;
+    }
+}
+
+@media (max-width:400px) {
+    .jumbotron {
+        height: 90vh;
+    }
+     #logo {
+        padding-left: 10px;
+    }
+}
+
+
+
+
+
+
+
