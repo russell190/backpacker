@@ -9,6 +9,10 @@ form {
     margin-top: 200px;
 }
 
+.container {
+    width: 30%;
+}
+
 /* Full-width inputs */
 input[type=text], input[type=password] {
     width: 100%;
@@ -29,7 +33,12 @@ button {
     cursor: pointer;
     width: 100%;
 }
-
+.new {
+    float: right;
+    color: whitesmoke;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
 /* Change color of username and password label */
 .username, .password, .remember, .name{
     color: whitesmoke;
