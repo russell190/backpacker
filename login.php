@@ -1,3 +1,7 @@
 <?php
 
-$conn 
+$conn = mysqli_connect("localhost","root", "", "logintest");
+
+if(!$conn) {
+    die("Connection failed.")
+}
