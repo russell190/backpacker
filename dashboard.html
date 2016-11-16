@@ -39,14 +39,39 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="login"><a href="login.html">Log In</a></li>
                     </ul>
-                </div>
+				</div>
             </div>
+			
         </div>    
     </header>
+	
+	<table id ="bootgrid" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="localhost" style="margin-left:212px;">
+	<thead>
+	<tr>
+		<th data-column-id="ID" data type="numeric" style="color: white;">ID</th>
+		<th data-column-id="Gear Count" style="color: white;">Gear Count</th>
+		<th data-column-id="Data Values" style="color: white;">Data Values will be listed below</th>
+	</tr>
+	</thead>
     
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/bootstrap.js"></script>
+<!-- init bootgrid plugin-->
+<script src="js/jquery.bootgrid.min.js"></script>
+
+<!--- bootgrid js. Will add to this-->
+
+<script langauge="javascript">
+
+$("#bootgrid").bootgrid(
+	 {
+	 caseSensitive:false
+	 
+	 });
+	
+
+</script>
 
 </body>
 </html>
