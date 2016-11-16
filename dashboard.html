@@ -12,39 +12,46 @@
 </head>
 <body>
     <header>
-        <div class="navbar navbar-inverse navbar-static-top">
+          <div class="navbar navbar-inverse navbar-static-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a href="index.html" class="navbar-brand" id="logo">BackPacker</a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-bar-target">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                        <a href="index.html" class="navbar-brand" id="logo">BackPacker</a>
                 </div>
+                <div class="navbar-collapse collapse" id="nav-bar-target">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="about"><a href="#">About</a></li>
+                        <li class="about"><a href="#">Toggle Dashboard</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>    
 				<!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        Sidebar
+                        Dashboard
                     </a>
                 </li>
 				<li class ="sidebar-border">
 				</li>
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="#">Gear-Lists</a>
                 </li>
                 <li>
-                    <a href="#">Shortcuts</a>
+                    <a href="#">Trips</a>
                 </li>
                 <li>
-                    <a href="#">Overview</a>
+                    <a href="#">Help</a>
                 </li>
         </div>
         <!-- /#sidebar-wrapper -->
-                <div class="navbar-collapse collapse" id="nav-bar-target">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="login"><a href="login.html">Log In</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>    
+   
     </header>
     
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
