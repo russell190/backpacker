@@ -1,6 +1,6 @@
 html {
-    height: 100vh;
-    background-color: white;
+    max-height: height: 100vh;
+    background-color: #2c2c2c;
 }
 
 #logo {
@@ -20,11 +20,12 @@ body {
     background-color: whitesmoke;
     font-weight: bold;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    overflow-y: hidden;
 }
 
 .jumbotron {
     margin-top: -20px;
-    height: 90vh;
+    height: 96vh;
     background-image: url(img/mountain-1462655.jpg);
     background-position: center;
     background-size: cover;
@@ -75,7 +76,7 @@ body {
 
 @media (max-width:400px) {
     .jumbotron {
-        height: 90vh;
+        height: 96vh;
     }
      #logo {
         padding-left: 10px;
