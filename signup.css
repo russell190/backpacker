@@ -64,13 +64,50 @@ span.psw {
     padding-top: 16px;
 }
 
+.cancelbtn {
+        width: 100%;
+    }
+
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .container {
+        width: 45%;
+    }   
+    
+}
+
+@media screen and (max-width: 800px) {
+     .container {
+    width: 60%;  
+    }
+}
+
+@media screen and (max-width: 600px) {
+     .container {
+    width: 65%;  
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .container {
+    width: 90%;
+    }
+    
+}
+
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
     span.psw {
         display: block;
         float: none;
     }
-    .cancelbtn {
-        width: 100%;
+    
+    .container {
+    width: 100%;
     }
 }

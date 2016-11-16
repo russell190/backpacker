@@ -53,6 +53,8 @@ body {
     background-color: #2c2c2c;
 }
 
+/*Screen size responsiveness*/
+
 @media (min-width: 1200px) {
     .jumbotron {
         height: 96vh;
@@ -62,6 +64,12 @@ body {
 @media (max-width: 768px) {
     #logo {
         padding-left: 20px;
+    }
+    
+ .navbar-toggle {
+        max-width: 35px;
+        display: inline-block;
+        float: right;
     }
 }
 
@@ -73,7 +81,6 @@ body {
         padding-left: 10px;
     }
 }
-
 
 
 
