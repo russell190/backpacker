@@ -1,5 +1,10 @@
 <?php
 
+include 'dbh.php';
+
+$str0 = "success!";
+$str1 = "failed to login";
+
 //Get values from form in login.php
 $uid = $_POST['uid'];
 $pwd = $_POST['pwd'];
@@ -11,20 +16,14 @@ $pwd = stripcslashes($pwd);
 $uid = mysql_real_escape_string($uid);
 $pwd = mysql_real_escape_string($pwd);
 
-
-//Connect to server and select database
-mysql_connect("localhost", "root", "");
-mysql_select_db("logintest");
-
 //Query the database for user
-$result = mysql_query("SELECT * FROM users WHERE username = '$username' and password = '$password')
-    or die("Failed to query database".mysql_error());
-$row = mysql_fetch_array($result);
+$sql = "SELECT * FROM usertest WHERE uid='$uid' AND pwd = '$pwd'";
+$result = $conn->query($sql);
 
-if ($row['username'] == $username && $row['password'] == $password ) {
-    echo "Login success!!! Welcome ".$row['username'];
-} else {
-    echo "Failed to login!";
+if (!$row = mysqli_fetch_assoc($result)) {
+    echo addslashes($str1);
 }
-
-?>
+else {
+    echo addslashes($str0);
+    header("Location: dashboard.html");
+}
