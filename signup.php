@@ -1,6 +1,14 @@
 <?php
-
+session_start();
 include 'dbh.php';
+
+session_start();
+    $str = "You are not logged in";
+    if(isset($_SESSION['id'])) {
+        echo $_SESSION['id'];
+}   else {
+    echo addslashes($str);
+}
 
 //Get values from form in login.php
 $name = $_POST['name'];

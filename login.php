@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include 'dbh.php';
 
 $str0 = "success!";
@@ -24,6 +24,6 @@ if (!$row = mysqli_fetch_assoc($result)) {
     echo addslashes($str1);
 }
 else {
-    echo addslashes($str0);
-    header("Location: dashboard.html");
+    $_SESSION['id'] = $row['id'];
+    header("Location: dashboard.php");
 }

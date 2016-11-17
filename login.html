@@ -48,7 +48,16 @@
     <span style = "color: white;"class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>
-    
+
+<?php
+    if(isset($_SESSION['id'])) {
+        echo $_SESSION['id'];
+}   else {
+    echo "You are not logged in!";
+}
+
+
+?>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/bootstrap.js"></script>
