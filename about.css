@@ -1,0 +1,146 @@
+/* Bordered form */
+html {
+    height: 100%;
+    background-color: #2c2c2c;
+}
+
+.new {
+    float: right;
+    color: whitesmoke;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+     .info {
+    font-size: 20px;
+    text-align: center;
+    vertical-align: text-top;
+    margin-top: 60px;
+}
+
+/* Change color of username and password label */
+
+@media screen and (max-width: 1400px) {
+      .info {
+    font-size: 20px;
+    text-align: center;
+    vertical-align: text-top;
+    margin-top: 60px;
+}
+
+.container {
+    margin-top: 150px;
+    background-color: aquamarine;
+    height: 25vh;
+    width: 50%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+.container {
+    margin-top: 180px;
+    height: 30vh;
+    width: 60%;
+    }
+}
+
+
+@media screen and (max-width:950px) {
+    .container {
+    margin-top: 130px;
+    height: 50vh;
+    width: 50%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .info {
+    font-size: 20px;
+    text-align: center;
+    vertical-align: text-top;
+    margin-top: 60px;
+}
+
+.container {
+    margin-top: 150px;
+    background-color: aquamarine;
+    height: 35vh;
+    width: 50%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+.container {
+    margin-top: 150px;
+    background-color: aquamarine;
+    height: 50vh;
+    width: 50%;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .container {
+    margin-top: 150px;
+    background-color: aquamarine;
+    height: 50vh;
+    width: 80%;
+    }
+    
+    .info {
+    font-size: 20px;
+    text-align: center;
+    vertical-align: text-top;
+    margin-top: 60px;
+}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    
+    .container {
+    width: 90%;
+    height: 65vh;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    
+    .container {
+    width: 98%;
+    height: 60vh;
+    }
+    
+     .info {
+    font-size: 20px;
+    text-align: center;
+    vertical-align: text-top;
+    margin-top: 5vh;
+}
+    
+    @media screen and (max-width: 220px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    
+    .container {
+    width: 98%;
+    height: 60vh;
+    }
+    
+     .info {
+    font-size: 16px;
+    text-align: center;
+    vertical-align: text-top;
+    margin-top: 20px;
+}

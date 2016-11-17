@@ -35,7 +35,7 @@
                 </div>
                 <div class="navbar-collapse collapse" id="nav-bar-target">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="about"><a href="#">About</a></li>
+                        <li class="about"><a href="about.html">About</a></li>
                         <li class="about"><a href="#">Toggle Dashboard</a></li>
                     </ul>
                 </div>
