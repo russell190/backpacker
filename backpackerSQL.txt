@@ -1,0 +1,95 @@
+
+CREATE TABLE Account (
+  AccountId int NOT NULL PRIMARY KEY,
+  name varchar (40) NOT NULL,
+  username varchar (40) NOT NULL,
+  password varchar(40) NOT NULL ,
+  email varchar(40) NOT NULL
+);
+
+CREATE TABLE Gear (
+  GearId int NOT NULL PRIMARY KEY,
+  GearType varchar(40) NOT NULL,
+  name varchar(40) NOT NULL,
+  cost dec,
+  rating int,
+);
+
+CREATE TABLE Location (
+  LocationId int NOT NULL PRIMARY KEY,
+  name varchar(40) NOT NULL,
+  description varchar(200) ;
+
+CREATE TABLE Trip(
+  TripId int NOT NULL PRIMARY KEY,
+  name varchar(40) NOT NULL,
+  description varchar(200),
+  AccountId int FOREIGN KEY references Account(AccountId)
+);
+
+
+CREATE TABLE City (
+  CityId int NOT NULL PRIMARY KEY,
+  name varchar(40),
+);
+
+CREATE TABLE State (
+ StateId int NOT NULL PRIMARY KEY, 
+  name varchar(40),
+);
+
+CREATE TABLE Country (
+  CountryId int NOT NULL PRIMARY KEY,
+  name varchar(40),
+);
+
+CREATE TABLE List (
+  ListId int NOT NULL PRIMARY KEY,
+   AccountId int FOREIGN KEY references Account(AccountId),
+  name varchar(40) NOT NULL
+);
+
+CREATE TABLE GearList (
+  ListId int FOREIGN KEY references List(ListId),
+  GearId int FOREIGN KEY references Gear(GearId)
+ 
+);
+
+CREATE TABLE StateCountry (
+  StateId int FOREIGN KEY references State(StateId),
+  CountryId int FOREIGN KEY references Country(CountryId)
+
+);
+CREATE TABLE CityState (
+  StateId int FOREIGN KEY references State(StateId),
+  CityId int FOREIGN KEY references City(CityId)
+
+);
+
+CREATE TABLE LocationCity (
+  Location int FOREIGN KEY references  Location(LocationId),
+  CityId int FOREIGN KEY references City(CityId)
+
+);
+
+CREATE TABLE GearAccount (
+  AccounId int FOREIGN KEY references  Account(AccountId),
+  GearId int FOREIGN KEY references Gear(GearId)
+);
+
+CREATE TABLE TripLocationList (
+  TripId int FOREIGN KEY references  Trip(TripId),
+  LocationId int FOREIGN KEY references Location(LocationId)
+);
+CREATE TABLE TripGearList (
+  TripId int FOREIGN KEY references  Trip(TripId),
+  ListId int FOREIGN KEY references List(ListId)
+);
+
+
+CREATE TABLE LocationAccount (
+  AccountId int FOREIGN KEY references  Account(AccountId),
+  LocationId int FOREIGN KEY references Location(LocationId)
+);
+
+
