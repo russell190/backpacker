@@ -61,15 +61,42 @@
 	<table id ="bootgrid" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="localhost" style="margin-left:212px;">
 	<thead>
 	<tr>
-		<th data-column-id="ID" data type="numeric" style="color: white;">ID</th>
-		<th data-column-id="Gear Count" style="color: white;">Gear Count</th>
-		<th data-column-id="Data Values" style="color: white;">Data Values will be listed below</th>
+		<th data-column-id="gearID" data type="numeric" style="color: white;">ID</th>
+		<th data-column-id="gearName" style="color: white;">Gear Name</th>
+		<th data-column-id="gearType" style="color: white;">Gear Type</th>
+		<th data-column-id="gearCost" data type="numeric" style="color: white;">Gear Cost</th>
+		<th data-column-id="gearRating" data type="numeric" style="color: white;">Gear Rating</th>
 	</tr>
 	</thead>
 	<tbody>
 	...
 	</tbody>
 	</table>
+
+<!-- textboxes that allow a user to post data to their gear lits
+
+Feel free to prettify this if you want
+
+gearID, gearName, gearType, gearCost, gearRating
+
+-->
+<form action="insert.php" method="post">
+
+Gear&nbsp;Name: <input type="text" name="gearNameformbox" />
+
+Gear&nbsp;Type: <input type="text" name="gearTypeformbox" />
+
+Gear&nbsp;Cost: <input type="text" name="gearCostformbox" />
+
+Gear&nbsp;Rating: <input type="text" name="gearRatingformbox" />
+
+
+
+ 
+
+<input type="submit" />
+
+</form>
     
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="js/main.js"></script>
