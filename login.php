@@ -13,8 +13,8 @@ $pwd = $_POST['pwd'];
 $uid = stripcslashes($uid);
 $pwd = stripcslashes($pwd);
 
-$uid = mysql_real_escape_string($uid);
-$pwd = mysql_real_escape_string($pwd);
+$uid = mysqli_real_escape_string($conn, $uid);
+$pwd = mysqli_real_escape_string($conn, $pwd);
 
 //Query the database for user
 $sql = "SELECT * FROM usertest WHERE uid='$uid' AND pwd = '$pwd'";
