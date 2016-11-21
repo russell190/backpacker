@@ -57,7 +57,7 @@
 			
         </div>    
     </header>
-	
+	<!--- This section needs to only display rows applicable to the AccountID signed in. We should probably update the ERD-->
 	<table id ="geargrid" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="localhost" style="margin-left:212px;">
 	<thead>
 	<tr>
@@ -113,7 +113,33 @@ For documentation see: http://www.jquery-bootgrid.com/documentation
 
 <script langauge="javascript">
 
-$("geargrid").bootgrid();
+$("geargrid").bootgrid({
+	ajax: true,
+    post: function ()
+    {
+        return {
+            id: "1"
+        };
+    },
+    url: "localhost",
+    formatters: {
+        "commands": function(column, row)
+		{
+			return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-pencil\"></span></button> " + 
+                "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-trash-o\"></span></button>";
+		}
+	}
+}).on("loaded.rs.jquery.bootgrid", function()
+{
+    grid.find(".command-edit").on("click", function(e)
+    {
+		/*Tentative actions. Users should be able to edit/delete using these commands*/
+        alert("You pressed edit on row: " + $(this).data("row-id"));
+    }).end().find(".command-delete").on("click", function(e)
+    {
+        alert("You pressed delete on row: " + $(this).data("row-id"));
+    });
+});
 	
 
 </script>
