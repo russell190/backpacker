@@ -58,7 +58,7 @@
         </div>    
     </header>
 	
-	<table id ="bootgrid" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="localhost" style="margin-left:212px;">
+	<table id ="geargrid" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="localhost" style="margin-left:212px;">
 	<thead>
 	<tr>
 		<th data-column-id="gearID" data type="numeric" style="color: white;">ID</th>
@@ -98,21 +98,22 @@ Gear&nbsp;Rating: <input type="text" name="gearRatingformbox" />
 
 </form>
     
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="js/main.js"></script>
-<script src="js/bootstrap.js"></script>
-<!-- init bootgrid plugin-->
-<script src="js/jquery.bootgrid.min.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<!-- Include bootgrid plugin (below), -->
+    <script src="js/jquery.bootgrid.min.js"></script>
 
-<!--- bootgrid js. Will add to this-->
+<!--- bootgrid js. Will add to this.
+
+For documentation see: http://www.jquery-bootgrid.com/documentation
+
+-->
 
 <script langauge="javascript">
 
-$("#bootgrid").bootgrid(
-	 {
-	 caseSensitive:false
-	 
-	 });
+$("geargrid").bootgrid();
 	
 
 </script>
