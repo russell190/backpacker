@@ -58,7 +58,7 @@
         </div>    
     </header>
 	<!--- This section needs to only display rows applicable to the AccountID signed in. We should probably update the ERD-->
-	<table id ="geargrid" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="localhost" style="margin-left:212px;">
+	<table id ="geargrid" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" style="margin-left:212px;">
 	<thead>
 	<tr>
 		<th data-column-id="gearID" data type="numeric" style="color: white;">ID</th>
