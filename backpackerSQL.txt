@@ -12,7 +12,7 @@ CREATE TABLE Gear (
   GearId int NOT NULL AUTO_INCREMENT,
   GearType varchar(40) NOT NULL,
   name varchar(40) NOT NULL,
-  cost dec,
+  weight decimal,
   rating int,
   PRIMARY KEY (GearId)
 );
@@ -28,10 +28,11 @@ CREATE TABLE Trip(
   TripId int NOT NULL AUTO_INCREMENT,
   name varchar(40) NOT NULL,
   description varchar(200),
-  AccountId int,
+  startdate DATE,
+  enddate DATE,
+  AccountId int NOT NULL,
   PRIMARY KEY (TripId),
-  FOREIGN KEY AccountId REFERENCES Account(AccountId)
- 
+CONSTRAINT `AccountTrip` FOREIGN KEY (`AccountId`) REFERENCES `backpacker`.`account`(`AccountId`) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
 CREATE TABLE City (
@@ -55,83 +56,81 @@ CREATE TABLE Country (
 CREATE TABLE List (
   ListId int NOT NULL AUTO_INCREMENT,
   name varchar(40) NOT NULL,
-  AccountId int,
+  AccountId int NOT NULL,
   PRIMARY KEY (ListId),
-  FOREIGN KEY AccountId REFERENCES Account(AccountId),
+  CONSTRAINT `AccountList` FOREIGN KEY (`AccountId`) REFERENCES `backpacker`.`account`(`AccountId`) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
-
 CREATE TABLE GearList (
 GearListId int NOT NULL AUTO_INCREMENT,
-  ListId int,
-  GearId int,
+  ListId int NOT NULL,
+  GearId int NOT NULL,
   PRIMARY KEY (GearListId),
-  FOREIGN KEY (ListId) REFERENCES List(ListId),
-  FOREIGN KEY (GearId) REFERENCES Gear(GearId)
+  CONSTRAINT `ListGearList` FOREIGN KEY (`ListId`) REFERENCES `backpacker`.`List` (`ListId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `GearGearList` FOREIGN KEY (`GearId`) REFERENCES `backpacker`.`Gear` (`GearId`) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
 CREATE TABLE StateCountry (
 StateCountryId int NOT NULL AUTO_INCREMENT,
-  StateId int,
-  CountryId int,
+  StateId int NOT NULL,
+  CountryId  int NOT NULL,
  PRIMARY KEY (StateCountryId),
- FOREIGN KEY (StateId) REFERENCES State(StateId),
- FOREIGN KEY (CountryId) REFERENCES Country(CountryId)
+ CONSTRAINT `StateSC` FOREIGN KEY (`StateId`) REFERENCES `backpacker`.`State` (`StateId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+ CONSTRAINT `CountrySC` FOREIGN KEY (`CountryId`) REFERENCES `backpacker`.`Country` (`CountryId`) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
 CREATE TABLE CityState (
 CityStateId int NOT NULL AUTO_INCREMENT,
-  StateId int,
-  CityId int,
+  StateId int NOT NULL,
+  CityId int NOT NULL,
  PRIMARY KEY (CityStateId),
- FOREIGN KEY (CityId) REFERENCES City(CityId),
- FOREIGN KEY (StateId) REFERENCES State(StateId)
+ CONSTRAINT `StateCS` FOREIGN KEY (`StateId`) REFERENCES `backpacker`.`State` (`StateId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+ CONSTRAINT `CityCS` FOREIGN KEY (`CityId`) REFERENCES `backpacker`.`City` (`CityId`) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
 
 CREATE TABLE LocationCity (
 LocationCityId int NOT NULL AUTO_INCREMENT,
-  Location int, 
-  CityId int,
+  LocationId int NOT NULL, 
+  CityId int NOT NULL,
 PRIMARY KEY (LocationCityId),
-FOREIGN KEY (CityId) REFERENCES City(CityId),
-FOREIGN KEY (LocationId) REFERENCES Location(LocationId)
-
+CONSTRAINT `CityLC` FOREIGN KEY (`CityId`) REFERENCES `backpacker`.`City` (`CityId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+CONSTRAINT `LocationLC` FOREIGN KEY (`LocationId`) REFERENCES `backpacker`.`Location` (`LocationId`) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
 CREATE TABLE GearAccount (
 GearAccountId int NOT NULL AUTO_INCREMENT,
-  AccounId int,
-  GearId int,
+  AccountId int NOT NULL,
+  GearId int NOT NULL,
   PRIMARY KEY (GearAccountId),
-  FOREIGN KEY (AccountId) REFERENCES Account(AccountId),
-  FOREIGN KEY (GearId) REFERENCES Gear(GearId)
+ CONSTRAINT `AccountGA` FOREIGN KEY (`AccountId`) REFERENCES `backpacker`.`account`(`AccountId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `GearGA` FOREIGN KEY (`GearId`) REFERENCES `backpacker`.`Gear` (`GearId`) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
 CREATE TABLE TripLocationList (
 TripLocationListId int NOT NULL AUTO_INCREMENT,
-  TripId int,
-  LocationId, 
+  TripId int NOT NULL,
+  LocationId int NOT NULL,
   PRIMARY KEY (TripLocationListId),
- FOREIGN KEY (TripId) REFERENCES Trip(TripId),
-FOREIGN KEY (LocationId) REFERENCES Location(LocationID)
+CONSTRAINT `TripTLL` FOREIGN KEY (`TripId`) REFERENCES `backpacker`.`Trip` (`TripId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+CONSTRAINT `LocationTLL` FOREIGN KEY (`LocationId`) REFERENCES `backpacker`.`Location` (`LocationId`) ON DELETE RESTRICT ON UPDATE RESTRICT
 
 );
 CREATE TABLE TripGearList(
 TripGearListId int NOT NULL AUTO_INCREMENT,
-  TripId int,
-  ListId int,
+  TripId int NOT NULL,
+  ListId int NOT NULL,
   PRIMARY KEY (TripGearListId),
-  FOREIGN KEY (TripId) REFERENCES Trip(TripId),
-  FOREIGN KEY (ListId) REFERENCES List(ListId)
+ CONSTRAINT `TripTGL` FOREIGN KEY (`TripId`) REFERENCES `backpacker`.`Trip` (`TripId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+ CONSTRAINT `ListTGL` FOREIGN KEY (`ListId`) REFERENCES `backpacker`.`List` (`ListId`) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
 
 CREATE TABLE LocationAccount (
 LocationAccountId int NOT NULL AUTO_INCREMENT,
-  AccountId int,
-  LocationId int,
-  PRIMARY KEY (LocationAccountId),
-  FOREIGN KEY (AccountId) REFERENCES Account(AccountId),
-  FOREIGN KEY (LocationId) REFERENCES Location(LocationID)
+  AccountId int NOT NULL,
+  LocationId int NOT NULL,
+   PRIMARY KEY (LocationAccountId),
+  CONSTRAINT `LocationLA` FOREIGN KEY (`LocationId`) REFERENCES `backpacker`.`Location` (`LocationId`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `AccountLA` FOREIGN KEY (`AccountId`) REFERENCES `backpacker`.`account`(`AccountId`) ON DELETE RESTRICT ON UPDATE RESTRICT
 );
 
