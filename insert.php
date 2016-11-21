@@ -2,26 +2,46 @@
 
 session_start();
 include 'dbh.php';
-$sql="INSERT INTO Gear (gearID, gearName, gearType, gearCost, gearRating)
 
-VALUES
+$gearID = '$_POST['gearIDformbox']';
+$gearName = '$_POST['gearNameformbox']';
+$gearType = '$_POST['gearTypeformbox']';
+$gearCost = ,'$_POST['gearCostformbox']';
+$gearRating = '$_POST['gearRatingformbox']');
 
-('$_POST[gearIDformbox]','$_POST[gearNameformbox]','$_POST[gearTypeformbox]','$_POST[gearCostformbox]','$_POST[gearRatingformbox]')";
+
+$stmt= $->prepare("INSERT INTO Gear VALUES (:gearID, :gearName, :gearType, :gearCost, :gearRating);");
+$stmt->bindParam(':gearID', $gearID);
+$stmt->bindParam(':gearName', $gearName);
+$stmt->bindParam(':gearType', $gearType);
+$stmt->bindParam(':gearCost', $gearCost);
+$stmt->bindParam(':gearRating', $gearRating);
+
+
+
+
 
  
 
-if (!mysql_query($sql,$con))
+if (!mysqli_query($stmt,$con))
 
   {
 
-  die('Error: ' . mysql_error());
+  die('Error: ' . mysqli_error());
 
   }
+  else
+	 /* Execute Query*/
+	$stmt->execute();
+	/*Bind it*/
+	$stmt->bind_result($gearID, $gearName, $gearType, $gearCost, $gearRating);
+
 
 echo "Success! New record added";
+	$stmt->close();
 
  
 
-mysql_close($con)
+mysqli_close($con);
 
 ?>
