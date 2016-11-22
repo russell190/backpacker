@@ -34,16 +34,16 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        Sidebar
+                        Dashboard
                     </a>
                 </li>
 				<li class ="sidebar-border">
 				</li>
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="dashboard.php">Gearlist</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="trip.php">Trips</a>
                 </li>
         </div>
         <!-- /#sidebar-wrapper -->
