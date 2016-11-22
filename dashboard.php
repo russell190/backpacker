@@ -82,22 +82,18 @@ gearID, gearName, gearType, gearCost, gearRating
 -->
 <form action="insert.php" method="post">
 
-Gear&nbsp;Name: <input type="text" name="gearNameformbox" />
+Gear Name: <input type="text" name="gearNameformbox" />
 
-Gear&nbsp;Type: <input type="text" name="gearTypeformbox" />
+Gear Type: <input type="text" name="gearTypeformbox" />
 
-Gear&nbsp;Cost: <input type="text" name="gearCostformbox" />
+Gear Weight: <input type="number" name="gearWeightformbox" />
 
-Gear&nbsp;Rating: <input type="text" name="gearRatingformbox" />
-
-
-
- 
+Gear Rating: <input type="number" name="gearRatingformbox" />
 
 <input type="submit" />
 
 </form>
-    
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-1.11.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
