@@ -20,5 +20,5 @@ $sql = "INSERT INTO usertest (name, uid, pwd, email)
 VALUES ('$name', '$uid','$pwd', '$email')";
 $result = $conn->query($sql);
 
-header("Location: login.html");
+header("Location: login.php");
 

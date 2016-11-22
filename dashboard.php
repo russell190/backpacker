@@ -66,11 +66,12 @@
 <form action="process.php" method="post">
     <div class="container" >
         <label class="label">Add Gear</label><br>
-        <input type="text" placeholder="Create list/Name of list to add to " name="gearlistid">
-        <input type="text" placeholder="Gear List Name" name="gearlistname">
+         <input type="text" placeholder="Gear Type" name="geartype">
         <input type="text" placeholder="Gear name" name="gearname">
+         <input type="text" placeholder="Description" name="description">
+        <input type="text" placeholder="Quantity" name="quantity">
         <input type="text" placeholder="Weight (in ounces)" name="weight">
-        <input type="text" placeholder="Quantity" name="qty">
+        <input type="text" placeholder="Rating" name="rating"><br>
         <button type="submit">Submit</button>
     </div>
 </form>
@@ -79,7 +80,6 @@
 <form action="process.php" method="post">
     <div class="container" >
         <label class="label">Edit Gear - If Field The Same, Leave Empty</label><br>
-        <input type="text" placeholder="Name of list to change" name="gearlistid">
         <input type="text" placeholder="Gear List Name" name="gearlistname">
         <input type="text" placeholder="Gear name" name="gearname">
         <input type="text" placeholder="Weight (in ounces)" name="weight">

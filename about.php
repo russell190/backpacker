@@ -44,7 +44,7 @@
     </header>
     
  <div class="container">
-    <p class="info">We are a group of three young soon to IT professionals with a passion for hiking, camping, and the great outdoors. We built a web application for your hiking trip and gear planning needs. If you would like to contribute to the project, our github page is <a href="https://github.com/russell190/backpacker">here.</a>  </p>
+    <p class="info">We are a group of three young soon to be IT professionals with a passion for hiking, camping, and the great outdoors. We built a web application for your hiking trip and gear planning needs. If you would like to contribute to the project, our github page is <a href="https://github.com/russell190/backpacker">here.</a>  </p>
     
  </div>     
 

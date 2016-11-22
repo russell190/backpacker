@@ -54,7 +54,7 @@
     <input type="password" placeholder="Password" name="pwd" >
     <input type="text" placeholder="Email" name="email" >
       
-    <button type="submit">Login</button>
+    <button type="submit">Sign-Up</button>
     <input  type="checkbox" checked="checked">
     <label class="remember"><b>Remember me</b></label><br>
   </div>

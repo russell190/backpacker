@@ -9,7 +9,7 @@ include 'dbh.php';
     echo addslashes($str);
 }
 
-//Get values from form in login.php
+//Get values from form in trip.php
 $id = $_SESSION['id'];
 $name = $_POST['name'];
 $description = $_POST['description'];
@@ -21,5 +21,11 @@ $end = $_POST['end'];
 $sql = "INSERT INTO trip (name, description, startdate, enddate, AccountId)
 VALUES ('$name', '$description','$start', '$end', '$id')";
 $result = $conn->query($sql);
+
+echo $id;
+echo $name;
+echo $description;
+echo $start;
+echo $end;
 
 header("Location: trip.php");
