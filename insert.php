@@ -3,45 +3,26 @@
 session_start();
 include 'dbh.php';
 
-$gearID = '$_POST['gearIDformbox']';
-$gearName = '$_POST['gearNameformbox']';
-$gearType = '$_POST['gearTypeformbox']';
-$gearCost = ,'$_POST['gearCostformbox']';
-$gearRating = '$_POST['gearRatingformbox']');
+$gearName   = $_POST['gearNameformbox'];
+$gearType   = $_POST['gearTypeformbox'];
+$gearWeight = $_POST['gearWeightformbox'];
+$gearRating = $_POST['gearRatingformbox'];
 
 
-$stmt= $->prepare("INSERT INTO Gear VALUES (:gearID, :gearName, :gearType, :gearCost, :gearRating);");
-$stmt->bindParam(':gearID', $gearID);
-$stmt->bindParam(':gearName', $gearName);
-$stmt->bindParam(':gearType', $gearType);
-$stmt->bindParam(':gearCost', $gearCost);
+$stmt= $pdo->prepare("
+	INSERT INTO Gear
+	(name,       GearType,   weight,    rating)
+	VALUES
+	(:gearName, :gearType, :gearWeight, :gearRating);
+");
+$stmt->bindParam(':gearName',   $gearName);
+$stmt->bindParam(':gearType',   $gearType);
+$stmt->bindParam(':gearWeight', $gearWeight);
 $stmt->bindParam(':gearRating', $gearRating);
 
 
-
-
-
- 
-
-if (!mysqli_query($stmt,$con))
-
-  {
-
-  die('Error: ' . mysqli_error());
-
-  }
-  else
-	 /* Execute Query*/
-	$stmt->execute();
-	/*Bind it*/
-	$stmt->bind_result($gearID, $gearName, $gearType, $gearCost, $gearRating);
-
+ /* Execute Query*/
+$stmt->execute();
+/*Bind it*/
 
 echo "Success! New record added";
-	$stmt->close();
-
- 
-
-mysqli_close($con);
-
-?>
