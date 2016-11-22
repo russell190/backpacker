@@ -4,7 +4,7 @@
     if(isset($_SESSION['id'])) {
         //echo $_SESSION['id'];
 }   else {
-    echo addslashes($str);
+    echo "<div style ='font:11px/21px Arial,tahoma,sans-serif;color:white'>$str</div>";
 }
 
 ?>

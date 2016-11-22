@@ -2,9 +2,9 @@
     session_start();
     $str = "You are not logged in";
     if(isset($_SESSION['id'])) {
-        echo $_SESSION['id'];
+        //echo $_SESSION['id'];
 }   else {
-    echo addslashes($str);
+    echo "<div style ='font:11px/21px Arial,tahoma,sans-serif;color:white'>$str</div>";
 }
 
 ?>
@@ -37,6 +37,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="about"><a href="about.php">About</a></li>
                         <li class="login"><a href="login.php">Log In</a></li>
+                        <li class="about"><a href="logout.php">Log-out</a></li>
                     </ul>
                 </div>
             </div>
