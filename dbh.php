@@ -14,4 +14,7 @@ $pdo = new PDO("mysql:host=$hostname;
 );
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-return $pdo;
+// overwrite with real database credentials
+if(file_exists(__DIR__.'/secret.pdo.php')){
+	require __DIR__.'/secret.pdo.php';
+}
