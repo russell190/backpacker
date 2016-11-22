@@ -34,7 +34,7 @@
                 </div>
                 <div class="navbar-collapse collapse" id="nav-bar-target">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="about"><a href="about.php">About</a></li>
+                        <li class="about"><a href="about.html">About</a></li>
                         <li class="about"><a href="logout.php">Log-out</a></li>
                     </ul>
                 </div>
@@ -63,48 +63,25 @@
         <!-- /#sidebar-wrapper -->
    
     </header>
-<form action="process.php" method="post">
+<br>
+<form action="tripprocess1.php" class="form1" method="post">
     <div class="container" >
-        <label class="label">Add Gear</label><br>
-        <input type="text" placeholder="Create list/Name of list to add to " name="gearlistid">
-        <input type="text" placeholder="Gear List Name" name="gearlistname">
-        <input type="text" placeholder="Gear name" name="gearname">
-        <input type="text" placeholder="Weight (in ounces)" name="weight">
-        <input type="text" placeholder="Quantity" name="qty">
+        <label class="label">Trip Details</label><br>
+        <input type="text" placeholder="Trip name" name="name">
+        <input type="text" placeholder="Description" name="description">
+        <input type="text" placeholder="Start Date (YYYY-MM-DD)" name="start">
+        <input type="text" placeholder="End Date (YYYY-MM-DD)" name="end">
         <button type="submit">Submit</button>
     </div>
 </form>
-<br>
-<br>
-<form action="process.php" method="post">
+<br>  
+<br>      
+<form action="tripprocess2.php" class="form2" method="post">
     <div class="container" >
-        <label class="label">Edit Gear - If Field The Same, Leave Empty</label><br>
-        <input type="text" placeholder="Name of list to change" name="gearlistid">
-        <input type="text" placeholder="Gear List Name" name="gearlistname">
-        <input type="text" placeholder="Gear name" name="gearname">
-        <input type="text" placeholder="Weight (in ounces)" name="weight">
-        <input type="text" placeholder="Quantity" name="qty">
-        <button type="submit">Submit</button>
-    </div>
-</form>
-        
-<br>
-<br>
-<form action="process.php" method="post">
-    <div class="container" >
-        <label class="label">Delete Gear From List</label><br>
-        <input type="text" placeholder="Gear List Name" name="gearlistname">
-        <input type="text" placeholder="Gear name" name="gearname">
-        <button type="submit">Submit</button>
-    </div>
-</form>
-        
-<br>
-<br>
-<form action="process.php" method="post">
-    <div class="container" >
-        <label class="label">Delete Gearlist</label><br>
-        <input type="text" placeholder="Gear List Name" name="gearlistname">
+        <label class="label">Location Details</label><br>
+        <input type="text" placeholder="City" name="description">
+        <input type="text" placeholder="State" name="start">
+        <input type="text" placeholder="Country" name="end">
         <button type="submit">Submit</button>
     </div>
 </form>

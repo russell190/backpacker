@@ -1,29 +1,73 @@
 <?php
-session_start();
-include 'dbh.php';
-
-$str0 = "success!";
-$str1 = "failed to login";
-
-//Get values from form in login.php
-$uid = $_POST['uid'];
-$pwd = $_POST['pwd'];
-
-//To prevent mysql injection
-$uid = stripcslashes($uid);
-$pwd = stripcslashes($pwd);
-
-$uid = mysqli_real_escape_string($conn, $uid);
-$pwd = mysqli_real_escape_string($conn, $pwd);
-
-//Query the database for user
-$sql = "SELECT * FROM usertest WHERE uid='$uid' AND pwd = '$pwd'";
-$result = $conn->query($sql);
-
-if (!$row = mysqli_fetch_assoc($result)) {
-    echo addslashes($str1);
+    session_start();
+    $str = "You are not logged in";
+    if(isset($_SESSION['id'])) {
+        //echo $_SESSION['id'];
+}   else {
+    echo addslashes($str);
 }
-else {
-    $_SESSION['id'] = $row['id'];
-    header("Location: dashboard.php");
-}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-Ua-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
+    <title>BackPacker</title>
+</head>
+<body>
+    <header>
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-bar-target">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="index.php" class="navbar-brand" id="logo">BackPacker</a>
+                </div>
+                <div class="navbar-collapse collapse" id="nav-bar-target">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="about"><a href="about.php">About</a></li>
+                        <li class="login"><a href="login.php">Log In</a></li>
+                        <li class="about"><a href="logout.php">Log-out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>    
+    </header>
+    
+<form action="loginprocess.php" method="post">
+  <div class="container" >   
+    <input type="text" placeholder="Username" name="uid">
+    <input type="password" placeholder="Password" name="pwd">
+      
+    <button type="submit">Login</button>
+    <input  type="checkbox" checked="checked">
+    <label class="remember"><b>Remember me</b></label><br>
+    <label class="new"><b>New user?<a href="signup.php"> Sign Up</a></b></label>
+  </div>
+
+  <div class="container" style="background-color:#2c2c2c">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span style = "color: white;"class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+<div class="navbar-fixed-bottom" id="footer">
+    <footer>
+        <span class="copyright">&copy Copyright 2016</span>
+    </footer>
+</div>
+</html>

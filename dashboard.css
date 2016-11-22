@@ -3,6 +3,10 @@ html {
     background-color: #2c2c2c;
 }
 
+.label {
+    color: white;
+    font-size: 18;
+}
 #logo {
     padding-left: 10px;
     color: white;
