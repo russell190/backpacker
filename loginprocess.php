@@ -6,24 +6,25 @@ $str0 = "success!";
 $str1 = "failed to login";
 
 //Get values from form in login.php
-$uid = $_POST['uid'];
-$pwd = $_POST['pwd'];
+if(isset($_POST['uid'], $_POST['pwd'])){
+	$sql = "
+		SELECT *
+		FROM Users
+		WHERE username = :username AND password = :password
+	";
+	$statement = $pdo->prepare($sql);
+	$statement->execute([
+		'username' => $_POST['uid'],
+		'password' => $_POST['pwd'],
+	]);
+	$result = $statement->fetch(PDO::FETCH_ASSOC);
+}
 
-//To prevent mysql injection
-$uid = stripcslashes($uid);
-$pwd = stripcslashes($pwd);
-
-$uid = mysqli_real_escape_string($conn, $uid);
-$pwd = mysqli_real_escape_string($conn, $pwd);
-
-//Query the database for user
-$sql = "SELECT * FROM usertest WHERE uid='$uid' AND pwd = '$pwd'";
-$result = $conn->query($sql);
-
-if (!$row = mysqli_fetch_assoc($result)) {
-    echo addslashes($str1);
+// if successful login
+if(!empty($result['UsersId'])){
+	$_SESSION['id'] = $result['UsersId'];
+	header("Location: dashboard.php");
 }
 else {
-    $_SESSION['id'] = $row['id'];
-    header("Location: dashboard.php");
+	header("Location: login.php");
 }
