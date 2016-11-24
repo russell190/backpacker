@@ -2,9 +2,9 @@
 
 // http://php.net/manual/en/book.pdo.php
 $hostname = 'localhost';
-$database = 'bakpak_DEQAzC';
-$username = 'bakpak_DEQAzC_A';
-$password = '3{qt&I86Y0nn/-Gc~%_&i8-D3DZj~pJB';
+$database = 'backpacker';
+$username = 'root';
+$password = '';
 
 $pdo = new PDO("mysql:host=$hostname;
 	charset=UTF8;
