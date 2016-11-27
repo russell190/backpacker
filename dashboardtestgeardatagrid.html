@@ -7,7 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dashboardtestgeardatagrid.css">
     <title>BackPacker</title>
 	<link href="js/jquery.bootgrid.css" rel="stylesheet">
 	
@@ -47,11 +47,11 @@
         </div>    
     </header>
 	
-	<div id= "gear"><table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="geardatagrid.php"  style="margin-left:212px;">
+	<table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="geardatagrid.php"  style="margin-left:212px;">
 	<thead>
 	<tr>
 		<th data-column-id="GearID" data type="numeric" data-identifier="true">GearID</th>
-		<th data-column-id="GearName">GearName</th>
+		<th data-column-id="GearType">GearType</th>
 	</tr>
 	</thead>
 	<tbody>
@@ -63,7 +63,7 @@
 
 Feel free to prettify this if you want
 
-gearID, gearName, gearType, gearCost, gearRating
+gearID, gearType, gearType, gearCost, gearRating
 
 -->
 <form action="insert.php" method="post" style="margin-left:212px; color:white; position: relative">
@@ -96,6 +96,10 @@ Gear&nbsp;Rating: <input type="text" name="gearRating" /> <br> <br>
 For documentation see: http://www.jquery-bootgrid.com/documentation
 
 -->
+
+<script langauge="javascript">
+$("#gear").bootgrid();
+</script>
 
 </body>
 </html>
