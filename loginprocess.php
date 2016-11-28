@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'dbh.php';
+$pdo = require __DIR__.'/pdo.php';
 
 $str0 = "success!";
 $str1 = "failed to login";
@@ -13,10 +13,10 @@ if(isset($_POST['uid'], $_POST['pwd'])){
 		WHERE username = :username AND password = :password
 	";
 	$statement = $pdo->prepare($sql);
-	$statement->execute([
+	$statement->execute(array(
 		'username' => $_POST['uid'],
 		'password' => $_POST['pwd'],
-	]);
+	));
 	$result = $statement->fetch(PDO::FETCH_ASSOC);
 }
 

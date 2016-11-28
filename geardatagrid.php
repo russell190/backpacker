@@ -1,23 +1,12 @@
 <?php
 #Include the dbh.php file
-include ('dbh.php');
+$pdo = require __DIR__.'/pdo.php';
+
+header('Content-Type: application/json');
+
 // get data and store in a json array
 $query = "SELECT GearID, GearType FROM Gear";
 $result = $pdo->prepare($query);
 $result->execute();
-/* bind result variables */
-$result->bind_result($GearID, $GearType);
-/* fetch values */
-while ($result->fetch())
-	{
-	$gear[] = array(
-		'GearID' => $GearID,
-		'GearType' => $GearType,
-	);
-	}
-echo json_encode($gear);
-/* close statement */
-$result->close();
-/* close connection */
-$pdo->close();
-?>
+
+echo json_encode(array('rows' => $result->fetchAll(PDO::FETCH_ASSOC)));
