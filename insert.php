@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include 'dbh.php';
+$pdo = require __DIR__.'/pdo.php';
 
 $gearName   = $_POST['gearNameformbox'];
 $gearType   = $_POST['gearTypeformbox'];

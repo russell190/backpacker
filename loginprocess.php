@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'dbh.php';
+$pdo = require __DIR__.'/pdo.php';
 
 $str0 = "success!";
 $str1 = "failed to login";

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'dbh.php';
+$pdo = require __DIR__.'/pdo.php';
 
 session_start();
     $str = "You are not logged in";

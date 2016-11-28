@@ -1,19 +1,7 @@
 <?php
 #Include the dbh.php file
-include ('dbh.php');
-// Connect to the database
-$pdo = new PDO("mysql:host=$hostname;
-	charset=UTF8;
-	dbname=$database",
-	$username,
-	$password
-);
-//Handles possible database connection error
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-// overwrite with real database credentials
-if(file_exists(__DIR__.'/secret.pdo.php')){
-	require __DIR__.'/secret.pdo.php';
-}
+$pdo = require __DIR__.'/pdo.php';
+
 // get data and store in a json array
 $query = "SELECT GearID, GearType FROM Gear";
 $result = $pdo-->prepare($query);
