@@ -9,7 +9,7 @@ $str1 = "failed to login";
 if(isset($_POST['uid'], $_POST['pwd'])){
 	$sql = "
 		SELECT *
-		FROM Users
+		FROM Account
 		WHERE username = :username AND password = :password
 	";
 	$statement = $pdo->prepare($sql);
@@ -21,8 +21,8 @@ if(isset($_POST['uid'], $_POST['pwd'])){
 }
 
 // if successful login
-if(!empty($result['UsersId'])){
-	$_SESSION['id'] = $result['UsersId'];
+if(!empty($result['AccountId'])){
+	$_SESSION['id'] = $result['AccountId'];
 	header("Location: dashboard.php");
 }
 else {

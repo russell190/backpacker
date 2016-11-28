@@ -1,5 +1,4 @@
 <?php
-session_start();
 $pdo = require __DIR__.'/pdo.php';
 
 session_start();
@@ -16,9 +15,9 @@ $uid = $_POST['uid'];
 $pwd = $_POST['pwd'];
 $email = $_POST['email'];
 
-$sql = "INSERT INTO usertest (name, uid, pwd, email)
+$sql = "INSERT INTO account (name, username, password, email)
 VALUES ('$name', '$uid','$pwd', '$email')";
-$result = $conn->query($sql);
+$result = $pdo->query($sql);
 
 header("Location: login.php");
 
