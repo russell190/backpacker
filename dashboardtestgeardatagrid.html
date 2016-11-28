@@ -47,7 +47,7 @@
         </div>    
     </header>
 	
-	<table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="geardatagrid.php"  style="margin-left:212px;">
+	<table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" style="margin-left:212px;">
 	<thead>
 	<tr>
 		<th data-column-id="GearID" data type="numeric" data-identifier="true">GearID</th>
@@ -98,7 +98,26 @@ For documentation see: http://www.jquery-bootgrid.com/documentation
 -->
 
 <script langauge="javascript">
-$("#gear").bootgrid();
+var grid = $("#gear").bootgrid({
+    ajax: true,
+    rowSelect: true,
+    post: function ()
+    {
+      /* To accumulate custom parameter with the request object */
+      return {
+        id: "b0df282a-0d67-40e5-8558-c9e93b7befed"
+      };
+    },
+    
+    url: "pdo.phpgeardatagrid.php",
+    formatters: {
+            "commands": function(column, row)
+            {
+                return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.id + "\"><span class=\"glyphicon glyphicon-edit\"></span></button> " + 
+                    "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.id + "\"><span class=\"glyphicon glyphicon-trash\"></span></button>";
+            }
+        }
+   })
 </script>
 
 </body>

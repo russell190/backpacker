@@ -10,3 +10,4 @@ $result = $pdo->prepare($query);
 $result->execute();
 
 echo json_encode(array('rows' => $result->fetchAll(PDO::FETCH_ASSOC)));
+?>
