@@ -1,5 +1,5 @@
 <?php
-return (function(){
+return call_user_func(function(){
     $hostname = 'localhost';
     $database = 'backpacker';
     $username = 'root'; // preferably non-privileged user
@@ -14,4 +14,4 @@ return (function(){
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     return $pdo;
-})();
+});
