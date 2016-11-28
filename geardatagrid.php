@@ -4,7 +4,7 @@ $pdo = require __DIR__.'/pdo.php';
 
 // get data and store in a json array
 $query = "SELECT GearID, GearType FROM Gear";
-$result = $pdo-->prepare($query);
+$result = $pdo->prepare($query);
 $result->execute();
 /* bind result variables */
 $result->bind_result($GearID, $GearType);
