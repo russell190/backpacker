@@ -57,18 +57,14 @@
         </div>    
     </header>
 	<!--- This section needs to only display rows applicable to the AccountID signed in. We should probably update the ERD-->
-	<table id ="geargrid" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" style="margin-left:212px;">
+<table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="geardatagrid.php" style="margin-left:212px;">
 	<thead>
 	<tr>
-		<th data-column-id="gearID" data type="numeric" style="color: white;">ID</th>
-		<th data-column-id="gearName" style="color: white;">Gear Name</th>
-		<th data-column-id="gearType" style="color: white;">Gear Type</th>
-		<th data-column-id="gearCost" data type="numeric" style="color: white;">Gear Cost</th>
-		<th data-column-id="gearRating" data type="numeric" style="color: white;">Gear Rating</th>
+		<th data-column-id="GearID" data type="numeric" data-identifier="true">GearID</th>
+		<th data-column-id="GearType">GearType</th>
 	</tr>
 	</thead>
 	<tbody>
-	...
 	</tbody>
 	</table>
 
@@ -76,17 +72,17 @@
 Feel free to prettify this if you want
 gearID, gearName, gearType, gearCost, gearRating
 -->
-<form action="insert.php" method="post">
+<form action="insert.php" method="post" style="margin-left:212px; margin-top:100px; color:black;  position: absolute>
 
-Gear Name: <input type="text" name="gearNameformbox" />
+Gear Name: <input type="text" name="gearNameformbox">
 
-Gear Type: <input type="text" name="gearTypeformbox" />
+Gear Type: <input type="text" name="gearTypeformbox">
 
-Gear Weight: <input type="number" name="gearWeightformbox" />
+Gear Weight: <input type="number" name="gearWeightformbox">
 
-Gear Rating: <input type="number" name="gearRatingformbox" />
+Gear Rating: <input type="number" name="gearRatingformbox" <br>
 
-<input type="submit" />
+<center><input type="submit" /></center>
 
 </form>
 
@@ -102,34 +98,24 @@ For documentation see: http://www.jquery-bootgrid.com/documentation
 -->
 
 <script langauge="javascript">
-$("geargrid").bootgrid({
-	ajax: true,
+var grid = $("#gear").bootgrid({
     post: function ()
     {
-        return {
-            id: "1"
-        };
+      /* To accumulate custom parameter with the request object */
+      return {
+        id: "b0df282a-0d67-40e5-8558-c9e93b7befed"
+      };
     },
-    url: "localhost",
+    
+    url: "/geardatagrid.php",
     formatters: {
-        "commands": function(column, row)
-		{
-			return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-pencil\"></span></button> " + 
-                "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-trash-o\"></span></button>";
-		}
-	}
-}).on("loaded.rs.jquery.bootgrid", function()
-{
-    grid.find(".command-edit").on("click", function(e)
-    {
-		/*Tentative actions. Users should be able to edit/delete using these commands*/
-        alert("You pressed edit on row: " + $(this).data("row-id"));
-    }).end().find(".command-delete").on("click", function(e)
-    {
-        alert("You pressed delete on row: " + $(this).data("row-id"));
-    });
-});
-	
+            "commands": function(column, row)
+            {
+                return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.id + "\"><span class=\"glyphicon glyphicon-edit\"></span></button> " + 
+                    "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.id + "\"><span class=\"glyphicon glyphicon-trash\"></span></button>";
+            }
+        }
+   })
 </script>
 
 </body>

@@ -47,7 +47,7 @@
         </div>    
     </header>
 	
-	<table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" style="margin-left:212px;">
+	<table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid">
 	<thead>
 	<tr>
 		<th data-column-id="GearID" data type="numeric" data-identifier="true">GearID</th>
@@ -109,7 +109,7 @@ var grid = $("#gear").bootgrid({
       };
     },
     
-    url: "pdo.phpgeardatagrid.php",
+    url: "geardatagrid.php",
     formatters: {
             "commands": function(column, row)
             {
