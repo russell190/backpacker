@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="dashboardtestgeardatagrid.css">
     <title>BackPacker</title>
 	<link href="js/jquery.bootgrid.css" rel="stylesheet">
 	
@@ -21,7 +17,7 @@
         <div class="navbar navbar-inverse navbar-static-top">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a href="index.php" class="navbar-brand" id="logo">BackPacker</a>
+                    <a href="index.html" class="navbar-brand" id="logo">BackPacker</a>
                 </div>
 				<!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -34,72 +30,60 @@
 				<li class ="sidebar-border">
 				</li>
                 <li>
-                    <a href="dashboard.php">Gearlist</a>
+                    <a href="#">Gear-List</a>
                 </li>
                 <li>
-                    <a href="trip.php">Trips</a>
+                    <a href="#">Trips</a>
                 </li>
         </div>
         <!-- /#sidebar-wrapper -->
                 <div class="navbar-collapse collapse" id="nav-bar-target">
                     <ul class="nav navbar-nav navbar-right">
-                         <li class="about"><a href="logout.php">Log-out</a></li>
-						 <li class="about"><a href="about.php">About</a></li>
+                        <li class="login"><a href="login.html">Log In</a></li>
                     </ul>
 				</div>
             </div>
 			
         </div>    
     </header>
-	<!--- This section needs to only display rows applicable to the AccountID signed in. We should probably update the ERD-->
-<table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="geardatagrid.php" style="margin-left:212px;">
+	
+	<table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid">
 	<thead>
 	<tr>
 		<th data-column-id="GearID" data type="numeric" data-identifier="true">GearID</th>
 		<th data-column-id="GearType">GearType</th>
-		<th data-column-id="name">Name</th>
-		<th data-column-id="weight">Weight</th>
-		<th data-column-id="rating">Rating</th>
 	</tr>
 	</thead>
 	<tbody>
 	</tbody>
 	</table>
-
+	</div>
+	
 <!-- textboxes that allow a user to post data to their gear lits
+
 Feel free to prettify this if you want
-gearID, gearName, gearType, gearCost, gearRating
+
+gearID, gearType, gearType, gearCost, gearRating
+
 -->
+<form action="insert.php" method="post" style="margin-left:212px; color:white; position: relative">
 
-<form action="createlist.php" method="post" style=margin-left:212px; margin-top:100px; color:black; position:relative;>
+Gear&nbsp;Name: <input type="text" name="gearName" /> <br> <br>
 
-<center>Gear List Name: <input type="text" name="GearListNameformbox"> <br> <br></center>
+Gear&nbsp;Type: <input type="text" name="gearType" /> <br> <br>
 
-<center><input type="submit" /></center>
+Gear&nbsp;Cost: <input type="text" name="gearCost" /> <br> <br>
 
-</form>
+Gear&nbsp;Rating: <input type="text" name="gearRating" /> <br> <br>
 
 
-<form action="insert.php" method="post" style=margin-left:212px; margin-top:300px; color:black; position:relative;>
 
-<center>Gear Name: <input type="text" name="gearNameformbox"> <br> <br>
+ 
 
-Gear Type: <input type="text" name="gearTypeformbox"> <br> <br>
-
-Gear Weight: <input type="number" name="gearWeightformbox"><br> <br>
-
-Gear Rating: <input type="number" name="gearRatingformbox"> <br> <br> </center>
-
-<center><input type="submit" /></center>
+<button type="submit" style="color:black">Add Gear Record</button>
 
 </form>
-
-<form action="geartolist.php" method="post" style=margin-left:212px; margin-top:500px; color:black; position:relative;>
-Gear ID: <input type="text" name="gearIDformbox"> <br> <br>
-List ID: <input type="text" name="gearListIDformbox"> <br> <br>
-<center><input type="submit" /></center>
-</form>
-
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-1.11.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -108,11 +92,15 @@ List ID: <input type="text" name="gearListIDformbox"> <br> <br>
     <script src="js/jquery.bootgrid.min.js"></script>
 
 <!--- bootgrid js. Will add to this.
+
 For documentation see: http://www.jquery-bootgrid.com/documentation
+
 -->
 
 <script langauge="javascript">
 var grid = $("#gear").bootgrid({
+    ajax: true,
+    rowSelect: true,
     post: function ()
     {
       /* To accumulate custom parameter with the request object */
@@ -121,7 +109,7 @@ var grid = $("#gear").bootgrid({
       };
     },
     
-    url: "/geardatagrid.php",
+    url: "geardatagrid.php",
     formatters: {
             "commands": function(column, row)
             {

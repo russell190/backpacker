@@ -13,16 +13,15 @@ $stmt= $pdo->prepare("
 	INSERT INTO Gear
 	(name,       GearType,   weight,    rating)
 	VALUES
-	(:gearName, :gearType, :gearWeight, :gearRating);
+	(:gearName, :gearType, :gearWeight, :gearRating)
 ");
 $stmt->bindParam(':gearName',   $gearName);
 $stmt->bindParam(':gearType',   $gearType);
 $stmt->bindParam(':gearWeight', $gearWeight);
 $stmt->bindParam(':gearRating', $gearRating);
 
-
  /* Execute Query*/
 $stmt->execute();
 /*Bind it*/
 
-echo "Success! New record added";
+echo "Success! Added gear to master list";
