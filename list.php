@@ -71,32 +71,12 @@ Feel free to prettify this if you want
 gearID, gearName, gearType, gearCost, gearRating
 -->
 
+<form class="createlist" action="createlist.php" method="post" style=margin-left:0px; margin-top:150px; color:black; position:relative;>
 
-<div class="form-container">
-	<center><form action="insert.php" class="form1" method="post" style=margin-left:0px; margin-top:300px; color:black; position:relative;>
-
-	Gear Name: <input type="text" name="gearNameformbox"> <br> <br>
-
-	Gear Type: <input type="text" name="gearTypeformbox"> <br> <br>
-
-	Gear Weight: <input type="number" name="gearWeightformbox"><br> <br>
-
-	Gear Rating: <input type="number" name="gearRatingformbox"> <br> <br> 
-
-	</form>
-
-	<input type="submit" />
-
-	<form action="geartolist.php" class="form2" method="post" style=margin-left:300px; margin-top:200px; color:black; position:relative;>
-	Gear ID: <input type="text" name="gearIDformbox"> <br> <br>
-	List ID: <input type="text" name="gearListIDformbox"> <br> <br>
-	<center><input type="submit" /></center>
-	</form>
-
-	</center>
-</div>
+<center>Create List - Name: <input type="text" name="GearListNameformbox"> <input type="submit" /></center>
 
 
+</form>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery-1.11.1.min.js"></script>

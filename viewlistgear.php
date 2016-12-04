@@ -52,14 +52,11 @@
         </div>    
     </header>
 	<!--- This section needs to only display rows applicable to the AccountID signed in. We should probably update the ERD-->
-<table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="geardatagrid.php" style="margin-left:212px;">
+<table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="listdatagrid.php" style="margin-left:212px;">
 	<thead>
 	<tr>
-		<th data-column-id="GearID" data type="numeric" data-identifier="true">GearID</th>
-		<th data-column-id="GearType">GearType</th>
-		<th data-column-id="name">Name</th>
-		<th data-column-id="weight">Weight</th>
-		<th data-column-id="rating">Rating</th>
+		<th data-column-id="ListID" data type="numeric" data-identifier="true">ListID</th>
+		<th data-column-id="name">List Name</th>
 	</tr>
 	</thead>
 	<tbody>
@@ -70,31 +67,6 @@
 Feel free to prettify this if you want
 gearID, gearName, gearType, gearCost, gearRating
 -->
-
-
-<div class="form-container">
-	<center><form action="insert.php" class="form1" method="post" style=margin-left:0px; margin-top:300px; color:black; position:relative;>
-
-	Gear Name: <input type="text" name="gearNameformbox"> <br> <br>
-
-	Gear Type: <input type="text" name="gearTypeformbox"> <br> <br>
-
-	Gear Weight: <input type="number" name="gearWeightformbox"><br> <br>
-
-	Gear Rating: <input type="number" name="gearRatingformbox"> <br> <br> 
-
-	</form>
-
-	<input type="submit" />
-
-	<form action="geartolist.php" class="form2" method="post" style=margin-left:300px; margin-top:200px; color:black; position:relative;>
-	Gear ID: <input type="text" name="gearIDformbox"> <br> <br>
-	List ID: <input type="text" name="gearListIDformbox"> <br> <br>
-	<center><input type="submit" /></center>
-	</form>
-
-	</center>
-</div>
 
 
 

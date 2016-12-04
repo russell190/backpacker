@@ -23,7 +23,7 @@ if(isset($_POST['uid'], $_POST['pwd'])){
 // if successful login
 if(!empty($result['AccountId'])){
 	$_SESSION['id'] = $result['AccountId'];
-	header("Location: dashboard.php");
+	header("Location: list.php");
 }
 else {
 	header("Location: login.php");
