@@ -12,7 +12,7 @@ echo $listID;
 /*Have the user look at their list table and have them enter the listID and gearID into the gearList table*/
 
 $stmt= $pdo->prepare("	
-	INSERT INTO GearList
+	INSERT INTO gearlist
 	(ListId, GearId)
 	VALUES
 	(:listID, :gearID);

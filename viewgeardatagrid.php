@@ -21,7 +21,7 @@ echo json_encode(array('rows' => $result->fetchAll(PDO::FETCH_ASSOC))
 
 function updateGear($params) {
 		$data = array();
-		$query = "UPDATE Gear set GearName = '" . $params["GearName_edit"] . "', GearType='" . $params["GearType_edit"]."' WHERE id='".$_POST["GearID"]."'";
+		$query = "UPDATE gear set GearName = '" . $params["GearName_edit"] . "', GearType='" . $params["GearType_edit"]."' WHERE id='".$_POST["GearID"]."'";
 		echo $result = pdo($this->conn, $query) or die("Error! Cannot update gear data");
 		
 		header("Location: viewlistgear.php");

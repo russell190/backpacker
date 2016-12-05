@@ -6,7 +6,7 @@ $params = $_REQUEST;
 header('Content-Type: application/json');
 
 // get data and store in a json array
-$query = "SELECT GearID, GearType, name, weight, rating FROM Gear";
+$query = "SELECT GearID, GearType, name, weight, rating FROM gear";
 $result = $pdo->prepare($query);
 $result->execute();
 
