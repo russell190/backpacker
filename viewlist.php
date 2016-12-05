@@ -33,6 +33,9 @@
                 </li>
 				<li class ="sidebar-border">
 				</li>
+				<li>
+                    <a href="list.php">Create List</a>
+                </li>
                 <li>
                     <a href="dashboard.php">Add Gear</a>
                 </li>
@@ -55,7 +58,7 @@
 <table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="listdatagrid.php" style="margin-left:212px;">
 	<thead>
 	<tr>
-		<th data-column-id="ListID" data type="numeric" data-identifier="true">ListID</th>
+		<th data-column-id="ListId" data type="numeric" data-identifier="true">ListID</th>
 		<th data-column-id="name">List Name</th>
 	</tr>
 	</thead>
@@ -69,12 +72,14 @@ gearID, gearName, gearType, gearCost, gearRating
 -->
 
 
-<form class="viewlist" action="viewlistgear.php" method="post" style=margin-left:0px; margin-top:150px; color:black; position:relative;>
+<form class="viewlist" action="viewgeardatagrid.php" method="post" style=margin-left:0px; margin-top:150px; color:black; position:relative;>
 
-<center>Name of list you would like to view: <input type="text" name="GearListNameformbox"> <input type="submit" /></center>
-
+<center>ID of list you would like to view: <input type="text" name="GearListIDformbox"> <input type="submit" /></center>
 
 </form>
+
+<a href="viewlistgear.php" class="button">View Gear From List Entered Above</a>
+
 
 
 

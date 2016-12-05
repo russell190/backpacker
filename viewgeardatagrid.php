@@ -7,8 +7,11 @@ $params = $_REQUEST;
 
 header('Content-Type: application/json');
 
+//Get listID from viewlist.php
+$listID = $_POST['GearListIDformbox'];
+
 // get data and store in a json array
-$query = "SELECT ListID, name FROM List WHERE AccountId = $AccountId";
+$query = "SELECT ListId, name FROM List WHERE ListId = $listID";
 $result = $pdo->prepare($query);
 $result->execute();
 
@@ -20,5 +23,8 @@ function updateGear($params) {
 		$data = array();
 		$query = "UPDATE Gear set GearName = '" . $params["GearName_edit"] . "', GearType='" . $params["GearType_edit"]."' WHERE id='".$_POST["GearID"]."'";
 		echo $result = pdo($this->conn, $query) or die("Error! Cannot update gear data");
+		
+		header("Location: viewlistgear.php");
 	}
+	
 ?>

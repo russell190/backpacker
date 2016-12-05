@@ -33,6 +33,9 @@
                 </li>
 				<li class ="sidebar-border">
 				</li>
+				<li>
+                    <a href="list.php">Create List</a>
+                </li>
                 <li>
                     <a href="dashboard.php">Add Gear</a>
                 </li>
@@ -52,10 +55,10 @@
         </div>    
     </header>
 	<!--- This section needs to only display rows applicable to the AccountID signed in. We should probably update the ERD-->
-<table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="listdatagrid.php" style="margin-left:212px;">
+<table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="viewgeardatagrid.php" style="margin-left:212px;">
 	<thead>
 	<tr>
-		<th data-column-id="ListID" data type="numeric" data-identifier="true">ListID</th>
+		<th data-column-id="ListId" data type="numeric" data-identifier="true">ListID</th>
 		<th data-column-id="name">List Name</th>
 	</tr>
 	</thead>

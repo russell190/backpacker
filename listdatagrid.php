@@ -8,7 +8,7 @@ $params = $_REQUEST;
 header('Content-Type: application/json');
 
 // get data and store in a json array
-$query = "SELECT ListID, name FROM List WHERE AccountId = $AccountId";
+$query = "SELECT ListId, name FROM List WHERE AccountId = $AccountId";
 $result = $pdo->prepare($query);
 $result->execute();
 

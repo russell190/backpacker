@@ -33,6 +33,9 @@
                 </li>
 				<li class ="sidebar-border">
 				</li>
+				<li>
+                    <a href="list.php">Create List</a>
+                </li>
                 <li>
                     <a href="dashboard.php">Add Gear</a>
                 </li>
@@ -82,10 +85,10 @@ gearID, gearName, gearType, gearCost, gearRating
 	Gear Weight: <input type="number" name="gearWeightformbox"><br> <br>
 
 	Gear Rating: <input type="number" name="gearRatingformbox"> <br> <br> 
+	
+		<input type="submit" />
 
 	</form>
-
-	<input type="submit" />
 
 	<form action="geartolist.php" class="form2" method="post" style=margin-left:300px; margin-top:200px; color:black; position:relative;>
 	Gear ID: <input type="text" name="gearIDformbox"> <br> <br>

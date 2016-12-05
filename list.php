@@ -33,6 +33,9 @@
                 </li>
 				<li class ="sidebar-border">
 				</li>
+				<li>
+                    <a href="list.php">Create List</a>
+                </li>
                 <li>
                     <a href="dashboard.php">Add Gear</a>
                 </li>
