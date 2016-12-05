@@ -8,9 +8,9 @@ $params = $_REQUEST;
 header('Content-Type: application/json');
 
 // get data and store in a json array
-$query = "SELECT ListId, name FROM list WHERE AccountId = $AccountId";
+$query = "SELECT ListId, name FROM list WHERE AccountId = :AccountId";
 $result = $pdo->prepare($query);
-$result->execute();
+$result->execute(['AccountId' => $AccountId]);
 
 echo json_encode(array('rows' => $result->fetchAll(PDO::FETCH_ASSOC))
 //Need to implement rowcount and total rows in this array without breaking the script
