@@ -55,7 +55,7 @@
         </div>    
     </header>
 	<!--- This section needs to only display rows applicable to the AccountID signed in. We should probably update the ERD-->
-<table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="viewgeardatagrid.php" style="margin-left:212px;">
+<table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="viewgeardatagrid.php?listid=<?php echo $_GET['listid'] ?? 0; ?>" style="margin-left:212px;">
 	<thead>
 	<tr>
 		<th data-column-id="ListId" data type="numeric" data-identifier="true">ListID</th>
