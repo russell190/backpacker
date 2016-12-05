@@ -11,7 +11,7 @@ header('Content-Type: application/json');
 $listID = $_POST['GearListIDformbox'];
 
 // get data and store in a json array
-$query = "SELECT ListId, name FROM List WHERE ListId = $listID";
+$query = "SELECT ListId, name FROM list WHERE ListId = $listID";
 $result = $pdo->prepare($query);
 $result->execute();
 
