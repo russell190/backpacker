@@ -72,9 +72,9 @@ gearID, gearName, gearType, gearCost, gearRating
 -->
 
 
-<form class="viewlist" action="viewgeardatagrid.php" method="post" style=margin-left:0px; margin-top:150px; color:black; position:relative;>
+<form class="viewlist" action="viewlistgear.php" method="get" style="margin-left:0px; margin-top:150px; color:black; position:relative;">
 
-<center>ID of list you would like to view: <input type="text" name="GearListIDformbox"> <input type="submit" /></center>
+<center>ID of list you would like to view: <input type="text" name="listid"> <input type="submit" /></center>
 
 </form>
 

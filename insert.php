@@ -10,7 +10,7 @@ $gearRating = $_POST['gearRatingformbox'];
 
 
 $stmt= $pdo->prepare("
-	INSERT INTO Gear
+	INSERT INTO gear
 	(name,       GearType,   weight,    rating)
 	VALUES
 	(:gearName, :gearType, :gearWeight, :gearRating)

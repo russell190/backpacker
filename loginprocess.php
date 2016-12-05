@@ -9,7 +9,7 @@ $str1 = "failed to login";
 if(isset($_POST['uid'], $_POST['pwd'])){
 	$sql = "
 		SELECT *
-		FROM Account
+		FROM account
 		WHERE username = :username AND password = :password
 	";
 	$statement = $pdo->prepare($sql);

@@ -7,6 +7,11 @@
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
+DROP TABLE IF EXISTS `gearlist`;
+DROP TABLE IF EXISTS `list`;
+DROP TABLE IF EXISTS `gear`;
+DROP TABLE IF EXISTS `account`;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
