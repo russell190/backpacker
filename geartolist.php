@@ -6,8 +6,6 @@ $pdo = require __DIR__.'/pdo.php';
 $gearID = $_POST['gearIDformbox'];
 $listID = $_POST['gearListIDformbox'];
 
-echo $gearID;
-echo $listID;
 
 /*Have the user look at their list table and have them enter the listID and gearID into the gearList table*/
 
@@ -24,4 +22,8 @@ $stmt->bindParam(':gearID', $gearID);
 $stmt->execute();
 /*Bind it*/
 
+echo $gearID;
+echo $listID;
 echo "Success! Gear added to the list";
+
+header("Location: dashboard.php");

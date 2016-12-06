@@ -27,5 +27,6 @@ $result = $pdo->prepare($query);
 $result->execute([':listID' => $listID]);
 
 echo json_encode(array('rows' => $result->fetchAll(PDO::FETCH_ASSOC))
+
 //Need to implement rowcount and total rows in this array without breaking the script
 );

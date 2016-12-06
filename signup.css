@@ -4,7 +4,6 @@ html {
     background-color: #2c2c2c;
 }
 
-
 form {
     margin-top: 200px;
 }
@@ -55,7 +54,7 @@ button {
 .container {
     padding: 16px;
     width: 30%;
-    margin-top: -10px;
+    margin-top: -30px;
 }
 
 /* The "Forgot password" text */

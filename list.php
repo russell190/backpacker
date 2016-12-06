@@ -55,14 +55,11 @@
         </div>    
     </header>
 	<!--- This section needs to only display rows applicable to the AccountID signed in. We should probably update the ERD-->
-<table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="geardatagrid.php" style="margin-left:212px;">
+<table id ="gear" class="table table-condensed table-hover table-striped" data-toggle="bootgrid" data-ajax="true" data-url="listdatagrid.php" style="margin-left:212px;">
 	<thead>
 	<tr>
-		<th data-column-id="GearID" data type="numeric" data-identifier="true">GearID</th>
-		<th data-column-id="GearType">GearType</th>
-		<th data-column-id="name">Name</th>
-		<th data-column-id="weight">Weight</th>
-		<th data-column-id="rating">Rating</th>
+		<th data-column-id="ListId" data type="numeric" data-identifier="true">List ID</th>
+		<th data-column-id="name">List Name</th>
 	</tr>
 	</thead>
 	<tbody>

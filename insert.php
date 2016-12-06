@@ -25,3 +25,4 @@ $stmt->execute();
 /*Bind it*/
 
 echo "Success! Added gear to master list";
+header("Location: dashboard.php");

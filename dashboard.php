@@ -10,7 +10,6 @@
     <meta name="viewport" content="width = device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="dashboard.css">
     <title>BackPacker</title>
 	<link href="js/jquery.bootgrid.css" rel="stylesheet">
@@ -75,8 +74,8 @@ gearID, gearName, gearType, gearCost, gearRating
 -->
 
 
-<div class="form-container">
-	<center><form action="insert.php" class="form1" method="post" style=margin-left:0px; margin-top:300px; color:black; position:relative;>
+<div class="container form1">
+	<form action="insert.php" class="form1" method="post" style=margin-left:110px; margin-top:300px; color:black; position:relative;>
 
 	Gear Name: <input type="text" name="gearNameformbox"> <br> <br>
 
@@ -86,18 +85,17 @@ gearID, gearName, gearType, gearCost, gearRating
 
 	Gear Rating: <input type="number" name="gearRatingformbox"> <br> <br> 
 	
-		<input type="submit" />
-
+	<input type="submit" />
 	</form>
-
-	<form action="geartolist.php" class="form2" method="post" style=margin-left:300px; margin-top:200px; color:black; position:relative;>
+</div>
+<div class="container form2">
+	<form action="geartolist.php" class="form2" method="post" style="margin-left:550px; margin-top: -200px; color:black; position:relative;">
 	Gear ID: <input type="text" name="gearIDformbox"> <br> <br>
 	List ID: <input type="text" name="gearListIDformbox"> <br> <br>
-	<center><input type="submit" /></center>
+	<center><input type="submit" style="margin-left: -210px;" /></center>	
 	</form>
-
-	</center>
 </div>
+
 
 
 
@@ -122,7 +120,7 @@ var grid = $("#gear").bootgrid({
       };
     },
     
-    url: "/geardatagrid.php",
+    url: "/geardatagrid.php"
     formatters: {
             "commands": function(column, row)
             {

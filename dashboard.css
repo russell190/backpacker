@@ -1,6 +1,7 @@
 html {
     max-height: height: 100vh;
-    background-color: whitesmoke;
+    background-color: whitesmoke; 
+	overflow: scroll;
 }
 
 #gear{
@@ -17,9 +18,17 @@ html {
 	margin-left: 250px;
 }
 
-.form-container {
+form1 {
 	text-align: center;
 	margin: auto auto auto 0;
+	display: inline-block;
+}
+
+
+form2 {
+	display: inline-block;
+	align: right;
+	margin-top: -400px;
 }
 .a {
     background-color: black;
@@ -53,10 +62,6 @@ body {
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
- body {
-    overflow-x: hidden;
-	overflow-y: hidden;
- }
 
 /* Toggle Styles */
 
